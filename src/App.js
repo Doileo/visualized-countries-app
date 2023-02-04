@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './App.css';
 
 class CountriesList extends Component {
   // Define the state for countries, sort order, region filter, and area filter
@@ -67,17 +68,20 @@ class CountriesList extends Component {
     });
 
     return (
-      <div>
-        <button onClick={this.sortCountries}>Sort by Name</button>
-        <button onClick={() => this.filterByRegion('Oceania')}>
-          Filter by Region: Oceania
-        </button>
-        <button onClick={this.filterByArea}>
-          Filter by Area: smaller than Lithuania
-        </button>
-        <ul>
+      <div className="container">
+        <h1>A visualized representation of countries</h1>
+        <div className="buttons">
+          <button onClick={this.sortCountries}>Sort by Name</button>
+          <button onClick={() => this.filterByRegion('Oceania')}>
+            Oceania only
+          </button>
+          <button onClick={this.filterByArea}>
+            Smaller than Lithuania
+          </button>
+        </div>
+        <ul className="list">
           {filteredCountries.map(country => (
-            <li key={country.name}>
+            <li key={country.name} className="list-item">
               {country.name}, {country.region}, {country.area}
             </li>
           ))}

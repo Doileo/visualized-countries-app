@@ -7,6 +7,74 @@
   pointer-events: none;
 }
 
+/* Body styles */
+body {
+  background-color: #E3EEE3;
+}
+
+/* Container styles */
+.container {
+  padding-inline: 20px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+/* Styles for buttons */
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+button {
+  background-color: #436D44;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-out;
+  font-size: 14px;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+  transform: translateY(2px);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Styles for unordered list */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+li.list-item {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: lightgray;
+  border-radius: 5px;
+}
+
+
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -36,3 +104,48 @@
     transform: rotate(360deg);
   }
 }
+
+
+/* Media query for desktop styles */
+@media only screen and (min-width: 768px) {
+  h1 {
+    width: 40%;
+    margin: 35px auto;
+    font-size: 1.75rem;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    margin: 20px auto;
+  }
+
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .list-item {
+    width: 30%;
+    padding: 10px;
+    text-align: center;
+    background-color: #f2f2f2;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }  
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .list-item {
+    width: 60%;
+  }
+}
+
