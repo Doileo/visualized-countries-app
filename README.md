@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+A visualized countries app
+This project aims to display information about different countries from around the world, including their names, regions, and area sizes. The information is fetched from the free API available at https://restcountries.com. The display of the information is implemented using React. The application features a clean and simple design with a green color scheme.
+## Table of contents
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [My approach](#my-approach)
+  - [Future Exploration](#future-exploration)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+### The challenge
+1. Getting Started
+To run this project locally, you will need to follow these steps:
+- Clone or download the repository to your local machine.
+- Navigate to the project folder in your terminal.
+- Run npm install to install all necessary dependencies.
+- Run npm start to start the development server.
+- Visit http://localhost:3000 in your browser to see the project running locally.
 
-### `npm start`
+2. Project Structure
+The project consists of the following files and directories:
+- src/App.js: This file contains the React code for the project.
+- src/index.js: This file is the entry point of the project.
+- src/App.css: This file contains the CSS styles for the project.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+3. Features
+    - Fetch data from the API.
+    - Display a list of countries with their name, region, and area size.
+    - Sort the list alphabetically by name (ascending and descending).
+    - Filter countries by region (Oceania only) and by area (smaller than Lithuania).
+### Screenshot
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![](./src/screenshot-of-the-app.png)
 
-### `npm test`
+## My process
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Built with
 
-### `npm run build`
+- CSS
+- Flexbox
+- Mobile-first workflow
+- [React](https://reactjs.org/) - JS library
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### My approach
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Here is a plan of actions I took to solve this challenge:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. I went through the React documentation.
+2. Decided on the design and layout of the application, keeping in mind the requirements of the project.
+3. I decided to break down the problem into smaller components, and write code for each component.
+4. Wrote the code for the main App component, which should import and render the other components.
+5. Used CSS styles to style the components, making sure to use media queries to create a responsive design.
+6. Test the application on different screen sizes and devices to ensure the layout is consistent and behaves as expected.
+7. Added any additional improvements, and continued to debug until the application is fully functional.
 
-### `npm run eject`
+### Future Exploration
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Adding Pagination: The current implementation displays all the items in a single page. One aspect I want
+ to explore further is to add pagination to the project. This would allow the user to view a certain number of 
+ items at a time and navigate to different pages to view the rest. I plan to research and implement different 
+ pagination techniques that are best suited for this project.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Useful resources 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+These are the resources that I used to create the application and helped me complete this project.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- The official React documentation (https://reactjs.org/docs/getting-started.html)
+- The CSS Flexbox Layout (https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+- Media Queries (https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries)
+- React Components (https://reactjs.org/docs/components-and-props.html)
+## Author
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Website - [Doina](https://doileo.github.io/portfolio/)
+- LinkedIn - [Doina Leovchin](https://www.linkedin.com/in/doinaleovchindeveloper/)
