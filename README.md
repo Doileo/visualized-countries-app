@@ -1,4 +1,5 @@
-A visualized countries app
+## A visualized countries app
+
 This project aims to display information about different countries from around the world, including their names, regions, and area sizes. The information is fetched from the free API available at https://restcountries.com. The display of the information is implemented using React. The application features a clean and simple design with a green color scheme.
 ## Table of contents
 
