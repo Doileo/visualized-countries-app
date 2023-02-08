@@ -2,7 +2,7 @@
   "name": "visualized-contries-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://johndoe.github.io/visualized-contries-app",
+  "homepage": "https://github.com/Doileo/visualized-countries-app",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
