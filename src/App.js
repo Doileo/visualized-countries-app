@@ -1,95 +1,106 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import "./App.css";
+import Filters from "./components/Filters";
+import CountryItem from "./components/CountryItem";
+import Pagination from "./components/Pagination";
 
-class CountriesList extends Component {
-  // Define the state for countries, sort order, region filter, and area filter
-  state = {
-    countries: [],
-    sortOrder: 'asc',
-    regionFilter: '',
-    areaFilter: ''
+const CountriesList = () => {
+  const [contries, setCountries] = useState([]);
+  const [sortOrder, setSortOrder] = useState("asc");
+  const [regionFilter, setRegionFilter] = useState("");
+  const [areaFilter, setAreaFilter] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+
+  useEffect(() => {
+    fetch("https://restcountries.com/v2/all?fields=name,region,area")
+      .then((response) => response.json())
+      .then((data) => setCountries(data))
+      .catch((error) => console.error(error));
+  }, []);
+
+  // Sort contries by name
+  const handleSort = () => {
+    setSortOrder(sortOrder === "asc" ? "desc" : "asc");
   };
 
-  // Fetch the data from the API when the component is mounted
-  componentDidMount() {
-    fetch('https://restcountries.com/v2/all?fields=name,region,area')
-      .then(response => response.json())
-      .then(data => {
-        this.setState({ countries: data });
-      })
-      .catch(error => console.error(error));
-  }
-
-  // Function to sort the countries
-  sortCountries = () => {
-    this.setState(prevState => ({
-      sortOrder: prevState.sortOrder === 'asc' ? 'desc' : 'asc'
-    }));
+  // Filter countries by region
+  const handleRegionFilter = (region) => {
+    setRegionFilter(region);
   };
 
-  // Function to filter the countries by region
-  filterByRegion = region => {
-    this.setState({ regionFilter: region });
+  // Filter contries by area
+  const handleAreaFilter = () => {
+    setAreaFilter(areaFilter === "ltu" ? "" : "ltu");
   };
 
-  // Function to filter the countries by area
-  filterByArea = () => {
-    this.setState(prevState => ({
-      areaFilter: prevState.areaFilter === 'ltu' ? '' : 'ltu'
-    }));
-  };
+  // Apply filters and sorting
+  let filteredCountries = contries;
 
-  render() {
-    // Destructure the state values
-    const { countries, sortOrder, regionFilter, areaFilter } = this.state;
-    let filteredCountries = countries;
-
-    // Filter the countries by region if the region filter is set
-    if (regionFilter) {
-      filteredCountries = filteredCountries.filter(
-        country => country.region === regionFilter
-      );
-    }
-
-    // Filter the countries by area if the area filter is set
-    if (areaFilter) {
-      filteredCountries = filteredCountries.filter(
-        country => country.area < countries.find(c => c.name === 'Lithuania').area
-      );
-    }
-
-    // Sort the filtered countries based on the sort order
-    filteredCountries.sort((a, b) => {
-      if (sortOrder === 'asc') {
-        return a.name.localeCompare(b.name);
-      } else {
-        return b.name.localeCompare(a.name);
-      }
-    });
-
-    return (
-      <div className="container">
-        <h1>A visualized representation of countries</h1>
-        <div className="buttons">
-          <button onClick={this.sortCountries}>Sort by Name</button>
-          <button onClick={() => this.filterByRegion('Oceania')}>
-            Oceania only
-          </button>
-          <button onClick={this.filterByArea}>
-            Smaller than Lithuania
-          </button>
-        </div>
-        <ul className="list">
-          {filteredCountries.map(country => (
-            <li key={country.name} className="list-item">
-              {country.name}, {country.region}, {country.area}
-            </li>
-          ))}
-        </ul>
-      </div>
+  if (regionFilter) {
+    filteredCountries = filteredCountries.filter(
+      (country) => country.region === regionFilter
     );
   }
-}
+
+  if (areaFilter) {
+    filteredCountries = filteredCountries.filter(
+      (country) =>
+        country.area < contries.find((c) => c.name === "Lithuania").area
+    );
+  }
+
+  filteredCountries.sort((a, b) => {
+    return sortOrder === "asc"
+      ? a.name.localeCompare(b.name)
+      : b.name.localeCompare(a.name);
+  });
+
+  // Pagination
+  const countriesPerPage = 10;
+  const indexOfLastCountry = currentPage * countriesPerPage;
+  const indexOfFirstCountry = indexOfLastCountry - countriesPerPage;
+  const currentCountries = filteredCountries.slice(
+    indexOfFirstCountry,
+    indexOfLastCountry
+  );
+
+  const pageNumbers = [];
+  for (
+    let i = 1;
+    i <= Math.ceil(filteredCountries.length / countriesPerPage);
+    i++
+  ) {
+    pageNumbers.push(i);
+  }
+
+  return (
+    <div className="container">
+      <h1>A visualized representation of contries</h1>
+
+      {/* Buttons for sorting and filtering */}
+      <Filters
+        handleSort={handleSort}
+        handleRegionFilter={handleRegionFilter}
+        handleAreaFilter={handleAreaFilter}
+      />
+
+      {/* List of countries */}
+      <section>
+        <ul className="list">
+          {currentCountries.map((country) => (
+            <CountryItem key={country.name} country={country} />
+          ))}
+        </ul>
+      </section>
+
+      {/* Pagination */}
+      <Pagination
+        pageNumbers={pageNumbers}
+        setCurrentPage={setCurrentPage}
+        currentPage={currentPage}
+      />
+    </div>
+  );
+};
 
 export default CountriesList;
-
