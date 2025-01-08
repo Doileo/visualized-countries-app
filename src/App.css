@@ -1,151 +1,246 @@
-.App {
-  text-align: center;
+/* Variables */
+:root {
+  --primary-color: #3b1e54;
+  --secondary-color: #9b7ebd;
+  --tertiary-color: #d4bee4;
+  --background-color: #e5e5e5;
+  --text-color: #3b1e54;
+  --card-background: #ffffff;
+  --button-radius: 4px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-/* Body styles */
+/* Global Styles */
 body {
-  background-color: #E3EEE3;
+  margin: 0;
+  font-family: "Roboto", Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
 }
 
-/* Container styles */
 .container {
-  padding-inline: 20px;
+  padding: 1rem 1.5rem;
 }
 
+/* Headings */
 h1 {
+  font-size: 1.75rem;
   text-align: center;
-  font-size: 1.5rem;
-  text-transform: uppercase;
+  color: var(--primary-color);
+  margin-bottom: 2.5rem;
 }
 
-/* Styles for buttons */
-.buttons {
+/* Filters */
+.filters {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   gap: 1rem;
+  align-items: stretch;
+  margin-bottom: 2rem;
 }
 
 button {
-  background-color: #436D44;
-  color: white;
-  padding: 6px 12px;
+  padding: 0.8rem 1.5rem;
   border: none;
-  border-radius: 4px;
+  border-radius: var(--button-radius);
+  font-size: 1rem;
   cursor: pointer;
-  margin-right: 10px;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease-out;
-  font-size: 14px;
+  transition: background-color 0.3s, transform 0.2s;
+  color: #ffffff;
 }
 
-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
+button:focus {
+  outline: 3px solid var(--tertiary-color);
+  outline-offset: 2px;
 }
 
-button:active {
-  transform: translateY(2px);
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+.btn-primary {
+  background-color: var(--primary-color);
 }
 
-/* Styles for unordered list */
-ul {
+.btn-primary:hover {
+  background-color: var(--secondary-color);
+}
+
+.btn-secondary {
+  background-color: var(--secondary-color);
+}
+
+.btn-secondary:hover {
+  background-color: var(--tertiary-color);
+}
+
+.btn-tertiary {
+  background-color: var(--tertiary-color);
+  color: var(--primary-color);
+}
+
+.btn-tertiary:hover {
+  background-color: var(--secondary-color);
+  color: #ffffff;
+}
+
+/* Country Cards */
+.list {
   list-style: none;
   padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2rem;
 }
 
-.list {
+.list-item {
+  background-color: var(--card-background);
+  border-left: 4px solid var(--primary-color);
+  padding: 1.5rem;
+  border-radius: var(--button-radius);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  transition: transform 0.3s, box-shadow 0.3s;
+  line-height: 1.6;
+}
+
+.list-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Pagination */
+.pagination {
   display: flex;
-  flex-direction: column;
-}
-
-li.list-item {
-  display: flex;
-  flex-direction: column;
-  margin: 10px 0;
-  padding: 10px;
-  background-color: lightgray;
-  border-radius: 5px;
-}
-
-
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 1rem;
+  margin-top: 2rem;
 }
 
-.App-link {
-  color: #61dafb;
+.pagination button {
+  background-color: var(--secondary-color);
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  font-size: 1.2rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.pagination button:hover {
+  background-color: var(--primary-color);
 }
 
+.pagination button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
 
-/* Media query for desktop styles */
-@media only screen and (min-width: 768px) {
-  h1 {
-    width: 40%;
-    margin: 35px auto;
-    font-size: 1.75rem;
-  }
+.pagination .current-page {
+  font-size: 1rem;
+  color: var(--text-color);
+}
 
-  .buttons {
-    display: flex;
+/* Tablets and larger screens */
+@media (min-width: 768px) {
+  .filters {
+    flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-    width: 50%;
-    margin: 20px auto;
+    gap: 1.5rem;
+  }
+
+  .container {
+    padding: 1.5rem 2rem;
   }
 
   .list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
   }
-  
+
+  /* Card Item Styling */
   .list-item {
-    width: 30%;
-    padding: 10px;
+    padding: 2rem;
     text-align: center;
-    background-color: #f2f2f2;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    margin-bottom: 20px;
-  }  
-}
+  }
 
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-  .list-item {
-    width: 60%;
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  /* Pagination Buttons */
+  .pagination button {
+    font-size: 1.25rem;
+    padding: 0.75rem 1.5rem;
+  }
+
+  button:focus {
+    outline: 3px solid var(--tertiary-color);
+    outline-offset: 2px;
+  }
+
+  .pagination {
+    gap: 1.5rem;
+  }
+
+  .pagination button:hover {
+    background-color: var(
+      --primary-color
+    ); /* Slight hover effect for better interactivity */
+  }
+
+  /* Button disabled state */
+  .pagination button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
   }
 }
 
+/* Desktops and larger screens */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem;
+  }
+
+  .filters {
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+
+  .list-item {
+    padding: 2rem;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .pagination button {
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+  }
+
+  .pagination {
+    gap: 2rem;
+  }
+
+  /* Card Item Hover Effects */
+  .list-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+}

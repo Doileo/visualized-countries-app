@@ -3,11 +3,18 @@ import React from "react";
 const Filters = ({ handleSort, handleRegionFilter, handleAreaFilter }) => {
   return (
     <div className="filters">
-      <button onClick={handleSort}>Sort by name</button>
-      <button onClick={() => handleRegionFilter("Oceania")}>
-        Oceania only
+      <button onClick={handleSort} className="btn btn-primary">
+        Sort by name
       </button>
-      <button onClick={handleAreaFilter}>Smaller than Lithuania</button>
+      <button
+        onClick={() => handleRegionFilter("Oceania")}
+        className="btn btn-secondary"
+      >
+        Filter: Oceania
+      </button>
+      <button onClick={handleAreaFilter} className="btn btn-tertiary">
+        Smaller than Lithuania
+      </button>
     </div>
   );
 };

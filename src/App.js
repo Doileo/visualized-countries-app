@@ -75,7 +75,7 @@ const CountriesList = () => {
 
   return (
     <div className="container">
-      <h1>A visualized representation of contries</h1>
+      <h1>A visualized representation of countries</h1>
 
       {/* Buttons for sorting and filtering */}
       <Filters
