@@ -16,27 +16,19 @@ const Pagination = ({ pageNumbers, setCurrentPage, currentPage }) => {
         onClick={handlePrevious}
         disabled={currentPage === 1}
         className="arrow"
-        aria-label={`Go to previous page, current page ${currentPage}`}
+        aria-label="Go to previous page"
+        aria-disabled={currentPage === 1}
       >
         &larr;
       </button>
 
-      {/* Page Numbers */}
-      <ul className="page-numbers">
-        {pageNumbers.map((number) => (
-          <li key={number}>
-            <button
-              onClick={() => setCurrentPage(number)}
-              aria-current={currentPage === number ? "page" : undefined}
-            >
-              {number}
-            </button>
-          </li>
-        ))}
-      </ul>
-
       {/* Current Page Display */}
-      <span className="current-page" role="status" aria-live="polite">
+      <span
+        className="current-page"
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+      >
         Page {currentPage} of {pageNumbers.length}
       </span>
 
@@ -45,7 +37,8 @@ const Pagination = ({ pageNumbers, setCurrentPage, currentPage }) => {
         onClick={handleNext}
         disabled={currentPage === pageNumbers.length}
         className="arrow"
-        aria-label={`Go to next page, current page ${currentPage}`}
+        aria-label="Go to next page"
+        aria-disabled={currentPage === pageNumbers.length}
       >
         &rarr;
       </button>
