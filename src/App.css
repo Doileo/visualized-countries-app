@@ -30,7 +30,7 @@ h1 {
   margin-bottom: 2.5rem;
 }
 
-/* Filters */
+/* Filters Buttons */
 .filters {
   display: flex;
   flex-direction: column;
@@ -39,7 +39,7 @@ h1 {
   margin-bottom: 2rem;
 }
 
-button {
+.filters button {
   padding: 0.8rem 1.5rem;
   border: none;
   border-radius: var(--button-radius);
@@ -49,35 +49,67 @@ button {
   color: #ffffff;
 }
 
-button:focus {
-  outline: 3px solid var(--tertiary-color);
-  outline-offset: 2px;
-}
-
-.btn-primary {
+.filters .btn-primary {
   background-color: var(--primary-color);
 }
 
-.btn-primary:hover {
+.filters .btn-primary:hover {
   background-color: var(--secondary-color);
 }
 
-.btn-secondary {
+.filters .btn-secondary {
   background-color: var(--secondary-color);
 }
 
-.btn-secondary:hover {
+.filters .btn-secondary:hover {
   background-color: var(--tertiary-color);
+  color: var(--text-color);
 }
 
-.btn-tertiary {
+.filters .btn-tertiary {
   background-color: var(--tertiary-color);
   color: var(--primary-color);
 }
 
-.btn-tertiary:hover {
+.filters .btn-tertiary:hover {
   background-color: var(--secondary-color);
   color: #ffffff;
+}
+
+.filters .btn-reset {
+  background-color: transparent;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+.filters .btn-reset:hover {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+/* Dropdown Select */
+.filters select {
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--secondary-color);
+  border-radius: var(--button-radius);
+  font-size: 1rem;
+  background-color: var(--card-background);
+  color: var(--text-color);
+  cursor: pointer;
+  display: block;
+  text-align: center;
+}
+
+.filters select option {
+  text-align: center;
+}
+
+.filters select:hover {
+  border-color: var(--primary-color);
+}
+
+.filters select:focus {
+  outline: 2px solid var(--primary-color);
 }
 
 /* Country Cards */
@@ -119,15 +151,11 @@ button:focus {
   background-color: var(--secondary-color);
   color: #ffffff;
   border: none;
-  border-radius: 50%;
-  width: 2.5rem;
-  height: 2.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border-radius: var(--button-radius);
+  padding: 0.5rem 1rem;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.2s;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .pagination button:hover {
@@ -140,15 +168,20 @@ button:focus {
 }
 
 .pagination .current-page {
+  font-weight: bold;
   font-size: 1rem;
   color: var(--text-color);
+}
+
+.pagination .nav-button {
+  font-size: 1rem;
 }
 
 /* Tablets and larger screens */
 @media (min-width: 768px) {
   .filters {
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     gap: 1.5rem;
   }
 
@@ -161,7 +194,6 @@ button:focus {
     gap: 2rem;
   }
 
-  /* Card Item Styling */
   .list-item {
     padding: 2rem;
     text-align: center;
@@ -170,33 +202,6 @@ button:focus {
   h1 {
     font-size: 2rem;
     margin-bottom: 3rem;
-  }
-
-  /* Pagination Buttons */
-  .pagination button {
-    font-size: 1.25rem;
-    padding: 0.75rem 1.5rem;
-  }
-
-  button:focus {
-    outline: 3px solid var(--tertiary-color);
-    outline-offset: 2px;
-  }
-
-  .pagination {
-    gap: 1.5rem;
-  }
-
-  .pagination button:hover {
-    background-color: var(
-      --primary-color
-    ); /* Slight hover effect for better interactivity */
-  }
-
-  /* Button disabled state */
-  .pagination button:disabled {
-    background-color: #cccccc;
-    cursor: not-allowed;
   }
 }
 
@@ -209,7 +214,6 @@ button:focus {
   }
 
   .filters {
-    justify-content: center;
     gap: 2rem;
     margin-bottom: 3rem;
   }
@@ -229,16 +233,6 @@ button:focus {
     margin-bottom: 3.5rem;
   }
 
-  .pagination button {
-    font-size: 1.5rem;
-    padding: 1rem 2rem;
-  }
-
-  .pagination {
-    gap: 2rem;
-  }
-
-  /* Card Item Hover Effects */
   .list-item:hover {
     transform: translateY(-6px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
