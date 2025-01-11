@@ -221,6 +221,7 @@ h1 {
   .list {
     grid-template-columns: repeat(3, 1fr);
     gap: 2.5rem;
+    margin-left: 10%;
   }
 
   .list-item {
@@ -236,5 +237,16 @@ h1 {
   .list-item:hover {
     transform: translateY(-6px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@media (min-width: 1400px) {
+  .list {
+    padding: 0 5rem;
+    margin-left: 14%;
+  }
+
+  h1 {
+    font-size: 3rem;
   }
 }
