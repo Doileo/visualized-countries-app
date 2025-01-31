@@ -11,7 +11,12 @@ const Filters = ({
       <button onClick={handleSort} className="btn btn-primary">
         Sort by name
       </button>
+
+      <label htmlFor="region-select" className="sr-only">
+        Filter by Region:
+      </label>
       <select
+        id="region-select"
         onChange={(e) => handleRegionFilter(e.target.value)}
         className="btn btn-secondary"
       >
@@ -22,9 +27,11 @@ const Filters = ({
         <option value="Europe">Europe</option>
         <option value="Oceania">Oceania</option>
       </select>
+
       <button onClick={handleAreaFilter} className="btn btn-tertiary">
         Smaller than Lithuania
       </button>
+
       <button onClick={resetFilters} className="btn btn-reset">
         Reset Filters
       </button>
