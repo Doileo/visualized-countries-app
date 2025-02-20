@@ -10,6 +10,11 @@ Originally, the project used an API to filter countries by name, size (smaller t
     - [The Challenge](#the-challenge)
     - [Screenshots](#screenshots)
     - [Links](#links)
+  - [My Process](#my-process)
+    - [Built With](#built-with)
+    - [What I Learned](#what-i-learned)
+    - [Continued Development](#continued-development)
+    - [Useful Resources](#useful-resources)
 
 ## Overview
 
@@ -34,3 +39,29 @@ Building the Visualized Countries app involved a few key challenges:
 
 - **[Live Demo](https://visualized-countries-app.vercel.app/)**: a live demonstration of the application.
 - **[GitHub Repository](https://github.com/Doileo/visualized-countries-app)**: access the source code and project files.
+
+## My Process
+
+### Built With
+
+- React.js
+- Fetch API
+- Vercel for Deployment
+- Accessibility-focused design
+
+### What I Learned
+
+- How to implement efficient filtering and pagination
+- Enhancing accessibility and usability for all users
+- Optimizing API calls for better performance
+
+### Continued Development
+
+- Improving search efficiency
+- Adding dark mode for better user experience
+- Implementing a more detailed country view with additional data
+
+### Useful Resources
+
+- [MDN Web Docs](https://developer.mozilla.org/)
+- [React Documentation](https://reactjs.org/docs/)
