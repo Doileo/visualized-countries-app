@@ -15,6 +15,11 @@ Originally, the project used an API to filter countries by name, size (smaller t
     - [What I Learned](#what-i-learned)
     - [Continued Development](#continued-development)
     - [Useful Resources](#useful-resources)
+  - [Installation Instructions](#installation-instructions)
+  - [Dependencies](#dependencies)
+  - [Usage Instructions](#usage-instructions)
+  - [Project Structure](#project-structure)
+  - [Author](#author)
 
 ## Overview
 
@@ -65,3 +70,55 @@ Building the Visualized Countries app involved a few key challenges:
 
 - [MDN Web Docs](https://developer.mozilla.org/)
 - [React Documentation](https://reactjs.org/docs/)
+
+## Installation Instructions
+
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/Doileo/visualized-countries-app.git
+   ```
+2. Navigate to the project directory:
+   ```sh
+   cd visualized-countries-app
+   ```
+3. Install dependencies:
+   ```sh
+   npm install
+   ```
+4. Start the development server:
+   ```sh
+   npm start
+   ```
+
+## Dependencies
+
+- React.js
+- React Router
+
+## Usage Instructions
+
+1. Open the application in the browser.
+2. Use the filters to search for countries based on name, region, or size.
+3. Reset filters to view all countries again.
+4. Click on pagination controls to browse more results.
+
+## Project Structure
+
+```
+visualized-countries-app/
+├── public/
+│   ├── assets/
+│   │   ├── screenshots/
+├── src/
+│   ├── components/
+│   ├── App.css
+│   ├── App.js
+│   ├── index.js
+├── package.json
+```
+
+## Author
+
+- GitHub: [@Doileo](https://github.com/Doileo)
+- LinkedIn: [Doina's Profile](https://www.linkedin.com/in/doinaleovchindeveloper/)
+- GitHub - [@Doileo](https://github.com/Doileo)
