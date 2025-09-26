@@ -205,24 +205,30 @@ h1 {
   padding: 0;
   margin: 0;
   display: grid;
-  gap: 1.5rem;
-  margin-top: 2rem;
+  gap: 2rem;
+  margin: 0 auto;
 }
 
-.list-item {
+.country-card {
   background-color: var(--card-background);
   border-left: 4px solid var(--primary-color);
   padding: 1.5rem;
   border-radius: var(--button-radius);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.12);
   text-align: left;
   transition: transform 0.3s, box-shadow 0.3s;
   line-height: 1.6;
+  border-bottom: 1px solid #e0e0e0;
 }
 
-.list-item:hover {
+.country-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.country-card h2,
+.country-card p {
+  margin: 0.5rem 0;
 }
 
 /* Pagination */
@@ -298,10 +304,10 @@ h1 {
 
   .list {
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    gap: 2.5rem;
   }
 
-  .list-item {
+  .country-card {
     padding: 2rem;
     text-align: center;
   }
@@ -330,7 +336,7 @@ h1 {
     margin-left: 10%;
   }
 
-  .list-item {
+  .country-card {
     padding: 2rem;
     text-align: center;
   }
@@ -340,7 +346,7 @@ h1 {
     margin-bottom: 3.5rem;
   }
 
-  .list-item:hover {
+  .country-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   }
@@ -350,6 +356,7 @@ h1 {
   .list {
     padding: 0 5rem;
     margin-left: 14%;
+    gap: 3rem;
   }
 
   h1 {
